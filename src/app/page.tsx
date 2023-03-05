@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main className='w-full h-full flex justify-center items-center'>
-      <button onClick={() => createAccountBank().then((data) => console.log(data.body))}>
+      <button onClick={() => createAccountBank().then((data) => console.log(data))}>
         CreateAccountBank
       </button>
     </main>
