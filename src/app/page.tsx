@@ -1,11 +1,15 @@
-import { Inter } from 'next/font/google'
+'use client';
 
-const inter = Inter({ subsets: ['latin'] })
+import { useCreateAccountBankFromImage } from '@/hooks/callApi/useCreateAccountBankFromImage';
 
 export default function Home() {
+  const { execute: createAccountBank } = useCreateAccountBankFromImage();
+
   return (
     <main className='w-full h-full flex justify-center items-center'>
-      <p>hello world</p>
+      <button onClick={() => createAccountBank().then((data) => console.log(data.body))}>
+        CreateAccountBank
+      </button>
     </main>
-  )
+  );
 }
