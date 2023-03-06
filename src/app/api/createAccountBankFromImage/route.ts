@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
-import { detectText } from '@/domain/services/aws/rekognition';
+import { detectText } from '@/infrastructure/google/vision';
 
 export async function GET() {
-  const res = await detectText();
-  const data = JSON.stringify(res.TextDetections);
-
+  const data = await detectText('S__21086211.jpg');
   return NextResponse.json({ data });
 }
